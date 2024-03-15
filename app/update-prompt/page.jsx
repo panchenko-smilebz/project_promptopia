@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Form from '@components/Form';
 
-const EditPrompt = () => {
+const UpdatePrompt = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const promptId = searchParams.get('id');
@@ -64,4 +64,13 @@ const EditPrompt = () => {
     />
   );
 };
+
+const EditPrompt = () => {
+  return (
+    <Suspense>
+      <UpdatePrompt />
+    </Suspense>
+  );
+};
+
 export default EditPrompt;
